@@ -3,7 +3,7 @@ FROM node:10
  
 # Desde donde ejecutamos la app
 
-WORKDIR /usr/src/gifs_ids
+WORKDIR /usr/src/app
  
 # Copiar el package.json y el lock al entorno
 COPY package*.json ./
