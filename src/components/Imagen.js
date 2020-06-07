@@ -4,7 +4,7 @@ import gif from './assets/14596.gif'
 
 const Imagen = () => {
     return ( 
-        <img src={gif}></img>
+        <img src={gif} alt="Gif de Star Wars"></img>
 
 
      );
