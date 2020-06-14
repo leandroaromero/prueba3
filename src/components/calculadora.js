@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom'
 import {suma} from '../functions/suma'
+import './assets/calculadora.css'
 class Calculadora extends Component{
     constructor(props){
         super(props);
@@ -22,7 +23,7 @@ class Calculadora extends Component{
         resultado = suma(num1,num2)
         this.setState({resultado:resultado})
 
-        ReactDOM.render(resultado, document.getElementById('resultado'));
+        ReactDOM.render(`Resultado: ${resultado}`, document.getElementById('resultado'));
     }
 
     input=(e)=>{
@@ -40,11 +41,14 @@ class Calculadora extends Component{
             SUMA
             <form>
             
-            <input type="text" id="num1"  onChange={(e)=>this.input(e)}/>
-             <input type="text" id="num2"  onChange={(e)=>this.input(e)}/>
-             <input type="button" value="Enviar" onClick={this.rendersuma}/>
+            <input className="barra" type="text" id="num1"  onChange={(e)=>this.input(e)}/>
+            <br/>
+             <input className="barra" type="text" id="num2"  onChange={(e)=>this.input(e)}/>
+             <br/>
+             <input type="button" className="boton" value="Resolver" onClick={this.rendersuma}/>
             </form>
-            <div id="resultado"></div>    
+            <br/>
+             <div id="resultado"></div>
 
             </div>
         )
