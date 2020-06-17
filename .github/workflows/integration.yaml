@@ -1,0 +1,29 @@
+name: integracion continua con node.js
+
+on:
+  push:  
+    branches: [ clock]
+
+
+jobs: 
+  ci_to_master:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10
+      - run: npm ci
+      - run: npm test -- --coverage
+
+      - uses: 8398a7/action-slack@v3
+        with:
+          #ACTION_NAME: Run test scripts
+          #JOB: ${{ toJson(job) }}
+
+          status: ${{ job.status }}
+          icon_emoji: ':octocat:'
+          fields: repo,message,commit,author,action,eventName,ref,workflow # selectable (default: repo,message)
+        env:        
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_ICDC }} # required
+        if: always()
