@@ -20,7 +20,6 @@ jobs:
         with:
           #ACTION_NAME: Run test scripts
           #JOB: ${{ toJson(job) }}
-
           status: ${{ job.status }}
           icon_emoji: ':octocat:'
           fields: repo,message,commit,author,action,eventName,ref,workflow # selectable (default: repo,message)
