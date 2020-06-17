@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 import Imagen from './components/Imagen'
 import Calculadora from './components/calculadora'
+import Clock from './components/Clock';
 function App() {
   return (
     <div className="App">
@@ -12,6 +13,9 @@ function App() {
       </div>
       <Imagen className="gif-centro"/>
       <Calculadora/>
+      <div>
+        <Clock/>
+      </div>
     </div>
   );
 }
