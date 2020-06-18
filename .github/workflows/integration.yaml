@@ -16,13 +16,13 @@ jobs:
       - run: npm ci
       - run: npm test -- --coverage
 
-      - uses: 8398a7/action-slack@v3
-        with:
+  #    - uses: 8398a7/action-slack@v3
+  #      with:
           #ACTION_NAME: Run test scripts
           #JOB: ${{ toJson(job) }}
-          status: ${{ job.status }}
-          icon_emoji: ':octocat:'
-          fields: repo,message,commit,author,action,eventName,ref,workflow # selectable (default: repo,message)
-        env:        
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_ICDC }} # required
-        if: always()
+  #        status: ${{ job.status }}
+  #        icon_emoji: ':octocat:'
+  #        fields: repo,message,commit,author,action,eventName,ref,workflow # selectable (default: repo,message)
+  #      env:        
+  #        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_ICDC }} # required
+  #      if: always()
